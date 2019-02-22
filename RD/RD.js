@@ -1,5 +1,5 @@
 import R from '../R/R'
-import render from './render'
+import { render } from './render'
 
 const RD = {
   render
@@ -24,15 +24,12 @@ const RD = {
 //   }
 // }
 
+const el = R.createElement
 
 
 RD.render(
-  R.createElement("div", {
-    className: "kuangjiajia"
-  },
-    R.createElement("div", {
-      className: "zzxa"
-    }, "zxadsad"),
-    R.createElement("div", {
-      className: "zzxa"
-    }, "zxadsad")), document.querySelector("#root"))
+  el("div", { className: "kuangjiajia" },
+    [el("div", { className: "zzxa" }, "zxadsad"),
+    el("div", { className: "zzxa" }, "zxadsad")]),
+  document.querySelector("#root")
+)

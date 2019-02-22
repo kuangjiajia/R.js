@@ -2,7 +2,7 @@ import {
   REACT_ELEMENT_TYPE
 } from './types'
 
-const createElement = function (type, config, ...children) {
+const createElement = function (type, config, children) {
   let props = {}
   Object.keys(config).forEach(prop => props[prop] = config[prop])
 

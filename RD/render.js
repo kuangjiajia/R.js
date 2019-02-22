@@ -1,5 +1,3 @@
-// import R from "../R/R";
-
 const render = function (jsx, root) {
   let vDom
   if (typeof jsx === "string") {
@@ -7,10 +5,11 @@ const render = function (jsx, root) {
   } else {
     vDom = jsx
   }
+  console.log(vDom)
   const vRoot = createVDom(vDom)
-  console.log(vRoot)
   root.appendChild(vRoot)
 }
+
 
 function createVDom(vDom) {
   const {
@@ -47,4 +46,7 @@ function createVDom(vDom) {
 
 
 
-export default render
+export {
+  render,
+  createVDom
+}
